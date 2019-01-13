@@ -10,7 +10,7 @@ export class PeopleService {
 
   constructor(private http: Http) { }
   getPeople() {
-    return this.http.get('https://randomuser.me/api/?inc=gender,name,phone,picture,dob,login&results=12')
+    return this.http.get('https://randomuser.me/api/?inc=gender,name,phone,picture,dob,login&results=20')
       .pipe(map((response: Response) => response.json()))
       .pipe(map(response => response.results))
       .pipe(map(users => {
@@ -21,7 +21,7 @@ export class PeopleService {
             age: `${user.dob.age}`,
             login: `${user.login.username}`,
             phone: user.phone,
-            picture: user.picture
+            image: user.picture.large
           }
         })
       }))
