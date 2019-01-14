@@ -5,9 +5,10 @@
         <label> Search: <input type="text"></label>
       </div>
     </div>
-    <div (click)="getPeople()" class="card-panel">
+    <div class="card-panel">
       <div class="row">
         <app-card
+          (click)="sendUserData(people)" 
           class="col s3 m3"
           *ngFor="let people of persons"
           [cardData]="people"

@@ -1,15 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { map } from "rxjs/operators";
+import { User } from '../user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeopleService {
+  public transferData = new Subject<User>();
+  currentData = this.transferData.asObservable();
+  
+  setNewTransferUser(user) {
+    this.transferData.next(user);
+  }
+
+  getNewTransferUser() {
+    return this.transferData;
+  }
 
   constructor(private http: Http) { }
-  getPeople() {
+  
+  getPeople(): Observable<User[]> {
     return this.http.get('https://randomuser.me/api/?inc=gender,name,phone,picture,dob,login&results=20')
       .pipe(map((response: Response) => response.json()))
       .pipe(map(response => response.results))

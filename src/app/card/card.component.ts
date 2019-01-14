@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PeopleService } from '../services/people.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-card',
@@ -6,11 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  constructor() { }
+  constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
   }
 
-  @Input() cardData;
+  sendUserData() {
+    this.peopleService.setNewTransferUser(this.cardData);
+  }
+
+  @Input() cardData: User;
 
 }

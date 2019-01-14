@@ -19,4 +19,8 @@ export class PoepleComponent implements OnInit {
       console.log(this.persons);
     });
   }
+
+  sendUserData(data) {
+    this.peopleService.setNewTransferUser(data);
+  }
 }
