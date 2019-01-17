@@ -10,6 +10,7 @@ import { User } from '../user';
 export class PeopleService {
 
   public transferData: User;
+  public userCollection: User[];
 
   constructor(private http: Http) { }
 
@@ -29,7 +30,5 @@ export class PeopleService {
           }
         })
       }))
-      
-
   }
 }

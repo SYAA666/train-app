@@ -12,6 +12,7 @@ import { CardComponent } from './card/card.component';
 import { PeopleService } from './services/people.service';
 
 const appRoutes = [
+  { path: '', redirectTo: "/app-people", pathMatch: 'full' },
   { path: 'app-main', component: MainComponent },
   { path: 'app-people', component: PoepleComponent},
   { path: 'app-forms', component: FormsComponent },
