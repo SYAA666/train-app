@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { PoepleComponent } from './poeple/poeple.component';
 import { FormsComponent } from './forms/forms.component';
 import { CardComponent } from './card/card.component';
+import { PeopleService } from './services/people.service';
 
 const appRoutes = [
   { path: 'app-main', component: MainComponent },
@@ -27,12 +28,9 @@ const appRoutes = [
   imports: [
     HttpModule,
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

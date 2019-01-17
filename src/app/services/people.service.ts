@@ -8,6 +8,9 @@ import { User } from '../user';
   providedIn: 'root'
 })
 export class PeopleService {
+
+  data: User;
+
   constructor(private http: Http) { }
   
   getPeople(): Observable<User[]> {

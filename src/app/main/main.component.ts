@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
+    alert(this.peopleService.data);
   }
 
 }
