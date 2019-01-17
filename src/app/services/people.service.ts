@@ -8,10 +8,15 @@ import { User } from '../user';
   providedIn: 'root'
 })
 export class PeopleService {
-
-  data: User;
+  private userInfoSource = new Subject<User>();
+  
+  userInfo = this.userInfoSource.asObservable();
 
   constructor(private http: Http) { }
+
+  pushUserInfo(user: User) {
+    this.userInfoSource.next(user);
+  }
   
   getPeople(): Observable<User[]> {
     return this.http.get('https://randomuser.me/api/?inc=gender,name,phone,picture,dob,login&results=20')

@@ -6,7 +6,6 @@ import { PeopleService } from '../services/people.service';
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
-  providers: [PeopleService]
 })
 export class MainComponent implements OnInit {
   userData: User;
@@ -14,7 +13,7 @@ export class MainComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
-    alert(this.peopleService.data);
+    
   }
 
 }
