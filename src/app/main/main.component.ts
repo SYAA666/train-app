@@ -14,12 +14,6 @@ export class MainComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
-    this.peopleService.currentData.subscribe(data => { this.userData = data; return this.userData}); 
   }
 
-  clikab() {
-    this.peopleService.currentData.subscribe(data => {
-      this.userData = data;
-    }); 
-  }
 }

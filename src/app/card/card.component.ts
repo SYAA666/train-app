@@ -14,7 +14,6 @@ export class CardComponent implements OnInit {
   }
 
   sendUserData() {
-    this.peopleService.setNewTransferUser(this.cardData);
   }
 
   @Input() cardData: User;

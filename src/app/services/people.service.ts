@@ -8,17 +8,6 @@ import { User } from '../user';
   providedIn: 'root'
 })
 export class PeopleService {
-  public transferData = new Subject<User>();
-  currentData = this.transferData.asObservable();
-  
-  setNewTransferUser(user) {
-    this.transferData.next(user);
-  }
-
-  getNewTransferUser() {
-    return this.transferData;
-  }
-
   constructor(private http: Http) { }
   
   getPeople(): Observable<User[]> {
