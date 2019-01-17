@@ -15,12 +15,7 @@ export class MainComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
-    this.peopleService.userInfo.pipe(map(user => {console.log(user)}))
-  }
-
-  clickThis() {
-    this.peopleService.userInfo.subscribe(user => {console.log(user)})
-
+    this.userData = this.peopleService.transferData;
   }
 
 }
