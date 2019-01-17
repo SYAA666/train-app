@@ -6,8 +6,6 @@ import { User } from '../user';
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
-  providers: [PeopleService]
-
 })
 export class CardComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }

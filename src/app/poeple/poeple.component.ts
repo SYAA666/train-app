@@ -4,7 +4,6 @@ import { PeopleService } from '../services/people.service';
   selector: 'app-poeple',
   templateUrl: './poeple.component.html',
   styleUrls: ['./poeple.component.css'],
-  providers: [PeopleService]
 })
 export class PoepleComponent implements OnInit {
 

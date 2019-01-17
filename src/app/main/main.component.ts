@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user';
 import { PeopleService } from '../services/people.service';
+import { map,take } from "rxjs/operators"
+import 'rxjs/operators/'
 
 @Component({
   selector: 'app-main',
@@ -13,7 +15,12 @@ export class MainComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }
 
   ngOnInit() {
-    
+    this.peopleService.userInfo.pipe(map(user => {console.log(user)}))
+  }
+
+  clickThis() {
+    this.peopleService.userInfo.subscribe(user => {console.log(user)})
+
   }
 
 }
