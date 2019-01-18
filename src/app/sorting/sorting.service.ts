@@ -5,10 +5,18 @@ import {User} from '../user';
   providedIn: 'root'
 })
 export class SortingService {
-  unSortedCollection: User[];
+  unSortedCollection: User[] = [];
   sortedUserCollection: User[];
   constructor() { }
-  byName( userCollection ) {
+  recoverUnsortedList(userCollection: User[]) {
+    /* userCollection.forEach((el) => {
+      this.unSortedCollection.push(el);
+    }); */
+    for (let i = 0; i < userCollection.length; i++) {
+      this.unSortedCollection.push(userCollection[i]);
+    }
+  }
+  byName(userCollection: User[] ) {
     userCollection.sort(function (first, next) {
       if ( first.name > next.name ) { return 1; } else if (first.name < next.name) { return -1; } else { return 0; }
     });
@@ -22,7 +30,7 @@ export class SortingService {
   }
   byPhone( userCollection ) {
     userCollection.sort(function (first: User, next: User) {
-      if ( first.phone > next.phone ) { return 1; } else if (first.phone < next.phone ) { return -1 } else { return 0; }
+      if ( first.phone > next.phone ) { return 1; } else if (first.phone < next.phone ) { return -1; } else { return 0; }
     });
   }
 }
