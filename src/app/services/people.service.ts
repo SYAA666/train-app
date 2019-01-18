@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
-import { map } from "rxjs/operators";
+import { map } from 'rxjs/operators';
 import { User } from '../user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeopleService {
-
+  public usersCollectionHolder: User[];
   public transferData: User;
-  public userCollection: User[];
-
   constructor(private http: Http) { }
 
   getPeople(): Observable<User[]> {
@@ -27,8 +25,8 @@ export class PeopleService {
             login: `${user.login.username}`,
             phone: user.phone,
             image: user.picture.large
-          }
-        })
-      }))
+          };
+        });
+      }));
   }
 }
