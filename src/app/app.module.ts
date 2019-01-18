@@ -10,6 +10,7 @@ import { PoepleComponent } from './poeple/poeple.component';
 import { FormsComponent } from './forms/forms.component';
 import { CardComponent } from './card/card.component';
 import { PeopleService } from './services/people.service';
+import {SortingService} from './sorting/sorting.service';
 
 const appRoutes = [
   { path: '', redirectTo: "/app-people", pathMatch: 'full' },
@@ -31,7 +32,7 @@ const appRoutes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [PeopleService],
+  providers: [PeopleService, SortingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

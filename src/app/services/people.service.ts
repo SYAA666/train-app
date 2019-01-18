@@ -11,7 +11,9 @@ export class PeopleService {
   public usersCollectionHolder: User[];
   public transferData: User;
   constructor(private http: Http) { }
-
+  static copyCollection(userCollection: User[]) {
+    return JSON.parse(JSON.stringify(userCollection));
+  }
   getPeople(): Observable<User[]> {
     return this.http.get('https://randomuser.me/api/?inc=gender,name,phone,picture,dob,login&results=20')
       .pipe(map((response: Response) => response.json()))

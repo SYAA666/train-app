@@ -1,5 +1,19 @@
 <div class="row">
   <div class="col s12">
+    <nav class="nav-extended teal lighten-1">
+      <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+          <li class="tab disabled"><a>Sort by: </a></li>
+          <li (click)="sortWithName()" class="tab"><a>Name</a></li>
+          <li (click)="sortWithUsername()" class="tab"><a>Username</a></li>
+          <li (click)="sortWithPhone()" class="tab"><a>Phone</a></li>
+          <li (click)="disableSort()" class="tab"><a>Disable sort</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="col s12">
     <div class="card-panel">
       <div class="row">
         <label> Search: <input type="text"></label>
