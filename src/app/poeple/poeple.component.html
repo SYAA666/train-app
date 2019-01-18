@@ -7,7 +7,6 @@
           <li (click)="sortWithName()" class="tab"><a>Name</a></li>
           <li (click)="sortWithUsername()" class="tab"><a>Username</a></li>
           <li (click)="sortWithPhone()" class="tab"><a>Phone</a></li>
-          <li (click)="disableSort()" class="tab"><a>Disable sort</a></li>
         </ul>
       </div>
     </nav>
@@ -16,13 +15,13 @@
   <div class="col s12">
     <div class="card-panel">
       <div class="row">
-        <label> Search: <input type="text"></label>
+        <label class="col s10"> Search: <input type="text"></label><button (click)="disableSort()" class="btn teal lighten-1">Disable sort</button>
       </div>
     </div>
     <div class="card-panel">
       <div class="row">
         <app-card   
-          class="col s3 m3"
+          class="col s3"
           *ngFor="let people of persons"
           [cardData]="people"
         ></app-card>

@@ -1,3 +1,14 @@
 .images {
-    height: 30%;
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+  height: 39%;
+}
+
+.card-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

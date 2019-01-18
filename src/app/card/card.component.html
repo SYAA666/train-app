@@ -4,9 +4,11 @@
       <span class="card-title">{{cardData.name}}</span>
     </div>
     <div class="card-content">
-      <p>gender: {{cardData.gender}}</p>
+      <p>User name:<br> {{cardData.login}}</p>
+      <p>{{cardData.phone}}</p>
     </div>
     <div class="card-action">
       <a (click)="sendUserData()" routerLink="/app-main">Show info</a>
     </div>
   </div>
+
