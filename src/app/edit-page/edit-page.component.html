@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card-panel grey lighten-5 z-depth-1">
+      <div class="row">
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <i class="material-icons circle blue">phone</i>
+            <h6>Current phone number: {{editingElement.phone}}</h6>
+            <div class="row">
+              <div class="col s6">
+                <label>New phone number:<input [(ngModel)]="number"  type="text"></label>
+              </div>
+            </div>
+            <div class="row">
+              <button (click)="savePhone()" class="btn col s1 blue">Save</button>
+            </div>
+          </li>
+          <li class="collection-item avatar">
+            <i class="material-icons circle blue">phone</i>
+            <div class="row">
+              <h6>Current id:</h6><p>{{editingElement.id}}</p>
+            </div>
+            <div class="row">
+              <div class="col s2">
+                <label>ID letters:<input [(ngModel)]="id.letters" type="text"></label>
+              </div>
+              <div class="col s6">
+                <label>ID code:<input [(ngModel)]="id.code"  type="text"></label>
+              </div>
+            </div>
+            <div class="row">
+              <button (click)="saveIDString()" class="btn col s1 blue">Save</button>
+            </div>
+          </li>
+
+          <li class="collection-item avatar">
+            <i class="material-icons circle blue">phone</i>
+            <div class="row">
+              <div class="col s5">
+                <label>Name:<input [(ngModel)]="id" type="text"></label>
+              </div>
+              <div class="col s5">
+                <label>Last name:<input [(ngModel)]="id"  type="text"></label>
+              </div>
+            </div>
+            <div class="row">
+              <button class="btn blue-grey">Save</button>
+            </div>
+          </li>
+          <li class="collection-item avatar">
+            <div class="row">
+              <label><input [(ngModel)]="id" class="col s7"  type="text"></label><button (click)="savePhone()" class="btn col s1 blue">Save</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <button (click)="saveWhenExit()" routerLink="/app-main/{{editingElement.name}}"  class="btn blue">Save changes</button>
+        <button routerLink="/app-main/{{editingElement.name}}"  class="btn red">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

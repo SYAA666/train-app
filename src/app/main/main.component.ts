@@ -19,5 +19,4 @@ export class MainComponent implements OnInit {
     this.userData = this.peopleService.transferData;
     this.userData.name = this.formatName(this.userData.name);
   }
-
 }

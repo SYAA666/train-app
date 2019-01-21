@@ -8,7 +8,7 @@
       <p>{{cardData.phone}}</p>
     </div>
     <div class="card-action">
-      <a (click)="sendUserData()" routerLink="/app-main">Show info</a>
+      <a (click)="sendUserData()" routerLink="/app-main/{{cardData.login}}">Show info</a>
     </div>
   </div>
 
