@@ -15,6 +15,7 @@ export class PoepleComponent implements OnInit {
     private sortingService: SortingService
   ) { }
   persons: User[];
+
   sortWithName() {
     this.sortingService.byName(this.persons);
     document.querySelectorAll('.tab')[1].classList.add('active');

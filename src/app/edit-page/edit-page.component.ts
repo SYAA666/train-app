@@ -3,9 +3,14 @@ import { PeopleService } from '../services/people.service';
 import { EditingService } from '../editing-service/editing.service';
 import { User } from '../user';
 
-interface IDConstructir {
+interface IDConstructor {
   letters: string;
   code: string;
+}
+
+interface  NameConstructor {
+  first: string;
+  last: string;
 }
 
 @Component({
@@ -16,8 +21,14 @@ interface IDConstructir {
 export class EditPageComponent implements OnInit {
   public editingElement: User;
   public number: string;
-  public id: IDConstructir;
-  public name: string;
+  public id: IDConstructor = {
+    letters: '',
+    code: ''
+  };
+  public name: NameConstructor = {
+    first: '',
+    last: ''
+  };
   constructor(
     private peopleService: PeopleService
   ) { }
@@ -31,11 +42,14 @@ export class EditPageComponent implements OnInit {
     this.editingElement.phone = this.number;
     console.log(this.editingElement.phone);
   }
+  saveName() {
+    this.editingElement.name = this.name.first + ' ' + this.name.last;
+  }
   saveWhenExit() {
-    let element: User = this.peopleService.usersCollectionHolder.find((obj) => obj.login === this.editingElement.login );
+    const element: User = this.peopleService.usersCollectionHolder.find((obj) => obj.login === this.editingElement.login );
     element.phone = this.editingElement.phone;
     element.id = this.editingElement.id;
-
+    element.name = this.editingElement.name;
     // this.peopleService.usersCollectionHolder.find()
   }
 }

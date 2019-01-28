@@ -1,5 +1,41 @@
-<h3
-  *ngFor="let user of users"
->
-  {{user.name}}
-</h3>
+<form class="col s12 card-panel" [formGroup]="newUser"  (ngSubmit)="onSubmit()">
+    <div class="row" formGroupName="title">
+      <div class="col s6">
+        <label>Name
+          <input formControlName="firstName" type="text" required>
+        </label>
+      </div>
+      <div class="col s6">
+        <label>Last Name
+          <input formControlName="lastName" type="text" required>
+        </label>
+      </div>
+    </div>
+    <div formGroupName="title">
+      <label>ID
+        <input formControlName="id" type="text" required>
+      </label>
+    </div>
+    <div formGroupName="location">
+      <label>City
+        <input formControlName="city" type="text">
+      </label>
+      <label>Street
+        <input formControlName="street" type="text">
+      </label>
+    </div>
+  <div formGroupName="personal">
+    <label>Phone:
+      <input formControlName="phone">
+    </label>
+    <label>User Name:
+      <input formControlName="userName">
+    </label>
+    <label>Email:
+      <input formControlName="email">
+    </label>
+  </div>
+  <button type="submit" class="btn">submit</button>
+</form>
+<p>{{ newUser.status }}</p>
+

@@ -16,7 +16,7 @@
             </div>
           </li>
           <li class="collection-item avatar">
-            <i class="material-icons circle blue">phone</i>
+            <i class="material-icons circle orange">code</i>
             <div class="row">
               <h6>Current id:</h6><p>{{editingElement.id}}</p>
             </div>
@@ -29,27 +29,22 @@
               </div>
             </div>
             <div class="row">
-              <button (click)="saveIDString()" class="btn col s1 blue">Save</button>
+              <button (click)="saveIDString()" class="btn col s1 orange">Save</button>
             </div>
           </li>
 
           <li class="collection-item avatar">
-            <i class="material-icons circle blue">phone</i>
+            <i class="material-icons circle blue-grey">person</i>
             <div class="row">
               <div class="col s5">
-                <label>Name:<input [(ngModel)]="id" type="text"></label>
+                <label>Name:<input [(ngModel)]="name.first" type="text"></label>
               </div>
               <div class="col s5">
-                <label>Last name:<input [(ngModel)]="id"  type="text"></label>
+                <label>Last name:<input [(ngModel)]="name.last"  type="text"></label>
               </div>
             </div>
             <div class="row">
-              <button class="btn blue-grey">Save</button>
-            </div>
-          </li>
-          <li class="collection-item avatar">
-            <div class="row">
-              <label><input [(ngModel)]="id" class="col s7"  type="text"></label><button (click)="savePhone()" class="btn col s1 blue">Save</button>
+              <button (click)="saveName()" class="btn col s1 blue-grey">Save</button>
             </div>
           </li>
         </ul>

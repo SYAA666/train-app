@@ -10,13 +10,13 @@ import { User } from '../user';
 export class CardComponent implements OnInit {
   constructor(private peopleService: PeopleService) { }
 
+  @Input() cardData: User;
+
   ngOnInit() {
   }
 
   sendUserData() {
     this.peopleService.transferData = this.cardData;
   }
-
-  @Input() cardData: User;
 
 }
