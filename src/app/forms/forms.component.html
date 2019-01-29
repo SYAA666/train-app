@@ -35,6 +35,16 @@
       <input formControlName="email">
     </label>
   </div>
+  <div class="row">
+    <label>
+      <input formControlName="gender" value="male" name="gender" type="radio">
+      <span>Man</span>
+    </label>
+    <label>
+      <input formControlName="gender" value="female" name="gender" type="radio">
+      <span>Woman</span>
+    </label>
+  </div>
   <button type="submit" class="btn">submit</button>
 </form>
 <p>{{ newUser.status }}</p>
