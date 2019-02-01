@@ -14,6 +14,7 @@ import { SortingService } from './sorting/sorting.service';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { EditingService } from './editing-service/editing.service';
 import { FormsModule } from '@angular/forms';
+import {SearchService} from './search/search.service';
 
 const appRoutes = [
   { path: 'editing', component: EditPageComponent },
@@ -43,7 +44,8 @@ const appRoutes = [
   providers: [
     PeopleService,
     SortingService,
-    EditingService
+    EditingService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

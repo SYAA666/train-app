@@ -11,7 +11,14 @@
       </div>
     </nav>
   </div>
-
+  <div class="col s12">
+    <div class="card-panel">
+      <div class="row">
+        <label class="col s10">Search: <input type="text" [(ngModel)]="search"></label>
+        <button (click)="searchInList()" class="btn"><i class="material-icons">search</i></button>
+      </div>
+    </div>
+  </div>
   <div class="col s12">
     <div class="card-panel">
       <div class="row">

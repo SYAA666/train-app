@@ -20,7 +20,7 @@ export class PeopleService {
     });
   }
   getPeople(): Observable<User[]> {
-    return this.http.get('https://randomuser.me/api/?inc=gender,name,phone,picture,dob,login,location,id,email&results=24')
+    return this.http.get('https://randomuser.me/api/?inc=gender,name,phone,picture,dob,login,location,id,email&results=100')
       .pipe(map((response: Response) => response.json()))
       .pipe(map(response => response.results))
       .pipe(map(users => {

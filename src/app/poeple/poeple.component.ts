@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { PeopleService } from '../services/people.service';
 import { SortingService } from '../sorting/sorting.service';
 import { User } from '../user';
+import {SearchService} from '../search/search.service';
 
 @Component({
   selector: 'app-poeple',
@@ -12,10 +13,15 @@ export class PoepleComponent implements OnInit {
 
   constructor(
     private peopleService: PeopleService,
-    private sortingService: SortingService
+    private sortingService: SortingService,
+    private searching: SearchService
   ) { }
   persons: User[];
-
+  search = '';
+  searchInList() {
+    this.searching.findIn(this.persons, this.search);
+    console.log(this.searching.searchReasult);
+  }
   sortWithName() {
     this.sortingService.byName(this.persons);
     document.querySelectorAll('.tab')[1].classList.add('active');
