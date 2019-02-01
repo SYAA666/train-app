@@ -47,7 +47,7 @@ export class FormsComponent implements OnInit {
       location: this.newUser.value.location,
       email: this.newUser.value.personal.email
     };
-    this.peopleService.usersCollectionHolder.push(this.transferData);
+    this.peopleService.usersCollectionHolder.unshift(this.transferData);
     console.log('submitted');
     console.log(this.newUser.value);
     this.router.navigate(['/app-people']);
